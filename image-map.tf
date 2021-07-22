@@ -1,12 +1,12 @@
 locals {
         image_map = {
-			"us-south" = "r006-84b18d30-b704-4f9c-aa1b-44233773d758"
-			"us-east" = "r014-7a3f9c63-0ef9-423d-9199-fdd98e4e0c86"
-			"eu-gb" = "r018-8225552a-ef54-4151-a855-d3ce245a3aed"
-			"eu-de" = "r010-9581f56b-8d6e-41ce-a860-3b7260538ae6"
-			"jp-tok" = "r022-14dc21a4-405e-4562-b6d0-9519f54afaef"
-			"jp-osa" = "r034-6ad91520-9540-4a1e-b0f5-1b5bcbaa8f3b"
-			"au-syd" = "r026-a3081259-838d-4ebb-b89d-37515709fe93"
-			"ca-tor" = "r038-4030532b-d6b7-4638-9222-90d83320725b"
+			"us-south" = "r006-749729c5-70a5-4eb4-9de1-932a2281c987"
+			"us-east" = "r014-c59f7bbf-f875-4574-a824-470839727417"
+			"eu-gb" = "r018-4f198015-561d-4ae8-9c6f-8aa6125c243e"
+			"eu-de" = "r010-8bbf51a9-74e5-41e8-b59d-8f389a7e83d0"
+			"jp-tok" = "r022-46b0e401-bd62-4c66-97a4-a43a318081a7"
+			"jp-osa" = "r034-d0d0dce4-0ba4-4ab2-8544-1f64ce49f2b2"
+			"au-syd" = "r026-3fb86a0a-9efa-4eef-adad-7332ec712aae"
+			"ca-tor" = "r038-cc801452-8088-4ec7-bc5c-2e705aeba83a"
         }
 }

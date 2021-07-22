@@ -91,7 +91,7 @@ resource "ibm_is_security_group_rule" "vsi_sg_rule_out_all" {
 }
  
 //vsi instance 
-resource "ibm_is_instance" "sample_vsi" {
+resource "ibm_is_instance" "juniper_ssr_vsi" {
   depends_on = [ibm_is_security_group_rule.vsi_sg_rule_out_all]
   name           = var.vsi_instance_name
   image          = local.image_map[var.region]
@@ -101,24 +101,32 @@ resource "ibm_is_instance" "sample_vsi" {
   primary_network_interface {
     name = "eth0"
     subnet = data.ibm_is_subnet.vsi_subnet1.id
+    allow_ip_spoofing = true
     security_groups = [ibm_is_security_group.vsi_security_group.id]
   }
 
   network_interfaces {
     name = "eth1"
     subnet = data.ibm_is_subnet.vsi_subnet2.id
+    allow_ip_spoofing = true
     security_groups = [ibm_is_security_group.vsi_security_group.id]
   }
 
   network_interfaces {
     name = "eth2"
     subnet = data.ibm_is_subnet.vsi_subnet3.id
+    allow_ip_spoofing = true
     security_groups = [ibm_is_security_group.vsi_security_group.id]
   }
   
   vpc  = data.ibm_is_subnet.vsi_subnet1.vpc
   zone = data.ibm_is_subnet.vsi_subnet1.zone
   keys = [data.ibm_is_ssh_key.vsi_ssh_pub_key.id]
+
+  resource "ibm_is_floating_ip" "ssr_wan1_floatingip" {
+  name   = "ssrwan1fip1"
+  target = ibm_is_instance.juniper_ssr_vsi.primary_network_interface[0].id
+  }
 }
 
 
