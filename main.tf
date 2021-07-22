@@ -123,10 +123,10 @@ resource "ibm_is_instance" "juniper_ssr_vsi" {
   zone = data.ibm_is_subnet.vsi_subnet1.zone
   keys = [data.ibm_is_ssh_key.vsi_ssh_pub_key.id]
 
-  resource "ibm_is_floating_ip" "ssr_wan1_floatingip" {
+}
+
+resource "ibm_is_floating_ip" "ssr_wan1_floatingip" {
   name   = "ssrwan1fip1"
   target = ibm_is_instance.juniper_ssr_vsi.primary_network_interface[0].id
   }
-}
-
 
