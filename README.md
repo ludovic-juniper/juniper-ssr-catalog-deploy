@@ -32,7 +32,7 @@ The 128T Conductor is a centralized management and policy engine that provides o
 To run the software, the following resources are required:
 * 3 subnets in your VPC : one for private/public Link1 (WAN1), one for private/public link2 (WAN2), one for local side (LAN1)
 * All 3 interfaces are configured with IP Spoofing enabled through the deployment process
-* SSH key that is used to reach the vSRX mgmt IP through SSH
+* SSH key that is used to reach the SSR Inband MGMT IP through SSH
 * one or more security-groups to apply to the 3 subnets
 * A floating-IP is created and attached to the first interface (WAN1) through the deployment process
 
@@ -48,7 +48,7 @@ With our platform, you can connect applications to users consistently and apply 
 We can help you modernize network security with a deny by default architecture and deny all, whitelist based routing. Our platform puts you in control of session directionality, while offering fine-grained segmentation, native session stateful firewall functions, and encryption of all data in motion.
 
 # FAIL SAFE SERVICE DELIVERY
-The 128T Networking Platform can help you maintain connectivity during planned and unplanned downtime. How? With advanced features such as active-active router clustering, sub-second session aware fast-failover, and dynamic session steering based on network state and QoS. That’s how.
+The Session Smart Router Networking Platform can help you maintain connectivity during planned and unplanned downtime. How? With advanced features such as active-active router clustering, sub-second session aware fast-failover, and dynamic session steering based on network state and QoS. That’s how.
 
 ## Upgrading to a new version
 
