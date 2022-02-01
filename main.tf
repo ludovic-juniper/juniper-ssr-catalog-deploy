@@ -15,28 +15,8 @@ provider "ibm" {
 # Read/validate Region
 ##############################################################################
 
-#data "ibm_is_region" "region" {
-#  name = var.region
-#}
-
-variable "generation" {
-  default     = 2
-  description = "The VPC Generation to target. Valid values are 2 or 1."
-}
-
-provider "ibm" {
-  /* Uncomment ibmcloud_api_key while testing from CLI */
-  #ibmcloud_api_key      = "${var.api_key}"
-  generation            = "${var.generation}" 
-  region                = "${var.region}"
-  ibmcloud_timeout      = 300
-}
-
-##############################################################################
-# Read/validate Region
-##############################################################################
 data "ibm_is_region" "region" {
-  name = "${var.region}"
+  name = var.region
 }
 
 ##############################################################################
@@ -146,8 +126,8 @@ resource "ibm_is_instance" "juniper_ssr_vsi" {
 
 }
 
-resource "ibm_is_floating_ip" "ssr_wan1_floatingip" {
-  name   = "ssrwan1fip1"
-  target = ibm_is_instance.juniper_ssr_vsi.primary_network_interface[0].id
-  }
+#resource "ibm_is_floating_ip" "ssr_wan1_floatingip" {
+#  name   = "ssrwan1fip1"
+#  target = ibm_is_instance.juniper_ssr_vsi.primary_network_interface[0].id
+#  }
 
