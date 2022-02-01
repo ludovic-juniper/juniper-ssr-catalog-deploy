@@ -44,8 +44,15 @@ variable "vsi_profile" {
   description = "The profile of compute CPU and memory resources to use when creating the virtual server instance. To list available profiles, run the `ibmcloud is instance-profiles` command."
 }
 
+#variable "region" {
+#  default     = ""
+#  description = "The region in which the VPC instance is located. Required for users to specify."
+#}
+
+// IBM Regions
 variable "region" {
-  default     = ""
+  type    = string
+  default = "us-south"
   description = "The region in which the VPC instance is located. Required for users to specify."
 }
 
